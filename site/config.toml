@@ -8,7 +8,7 @@ theme = "casper"
 contentdir = "content"
 layoutdir = "layouts"
 publishdir = "public"
-builddrafts = true
+builddrafts = false
 canonifyurls = true
 
 [taxonomies]
@@ -26,7 +26,7 @@ canonifyurls = true
   url = "/"
 
 [[menu.main]]
-  name = "About me"
+  name = "About"
   weight = -110
   identifier = "about"
   url = "/about"

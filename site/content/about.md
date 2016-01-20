@@ -16,5 +16,3 @@ This "Internet Shack" is the perfect place for random experiments that bother no
 The ongoing explorations relate to linux configuration with Ansible, Docker, Hugo static site generator and Gogs Git self hosting.
 
 I have called this place "the captain's shack" because of my alleged ressemblance to the advertising mascot for the Birds Eye frozen food brand. While known in the english speaking world as "[Captain Birdseye](https://en.wikipedia.org/wiki/Captain_Birdseye)", french speakers know him as "[Captain Iglo](https://fr.wikipedia.org/wiki/Captain_Iglo)".
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
