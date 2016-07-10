@@ -1,0 +1,39 @@
+baseurl = "http://blog.the-captains-shack.com/"
+languageCode = "en-us"
+title = "The Captain's Shack"
+theme = "casper"
+
+
+
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+builddrafts = false
+canonifyurls = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  description = "The perfect place for random experiments and explorations"
+  author = "Jean-Marc MEESSEN"
+  cover = "images/the-captains-shack2.jpg"
+
+[[menu.main]]
+  name = "My Blog"
+  weight = -120
+  identifier = "blog"
+  url = "/"
+
+[[menu.main]]
+  name = "About this blog"
+  weight = -110
+  identifier = "about"
+  url = "/about"
+
+[[menu.main]]
+  name = "About me"
+  weight = -100
+  identifier = "about_me"
+  url = "about_me"
