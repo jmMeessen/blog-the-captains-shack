@@ -36,4 +36,4 @@ canonifyurls = true
   name = "About me"
   weight = -100
   identifier = "about_me"
-  url = "about_me"
+  url = "/about_me"
