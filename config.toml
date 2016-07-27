@@ -18,7 +18,13 @@ canonifyurls = true
 [params]
   description = "The perfect place for random experiments and explorations"
   author = "Jean-Marc MEESSEN"
-  cover = "images/the-captains-shack2.jpg"
+  authorlocation = "Brussels, Belgium"
+  authorwebsite = "https://the-captains-shack.com"
+  cover = "images/cabin2.jpg"
+  githubName = "jmMeessen"
+  twitterName = "jm_meessen"
+  hideHUGOSupport = false
+  logo = "images/jmm_avatar.jpeg"
 
 [[menu.main]]
   name = "My Blog"
