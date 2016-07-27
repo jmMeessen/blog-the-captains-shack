@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/vjeantet/hugo-theme-casper.git
+	branch = master
+	commit = fe6b8f38c2b8d229dc884564eb66f7495804a946
+	parent = 5a198117e0933057a081b64fc7b7866d8b2ac04b
+	cmdver = 0.3.0
