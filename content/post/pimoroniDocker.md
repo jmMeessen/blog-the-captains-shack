@@ -18,4 +18,6 @@ With its hardware interfacing capabilities, the Raspberry Pi is also a very popu
 
 While prepairing a training lab with my flock of RPis, I wondered if I could demonstrate that aspect of Docker. These are some notes about my experiments.
 
+## The Piglow and the Display-O-Tron
+
 [Pimoroni](https://shop.pimoroni.com/) builds several devices that plug on the  Raspberry Pi GPIO. They are well designed, reasonably priced and often useful. The software support is good. Thus a good starting point for hassle free experiments.
