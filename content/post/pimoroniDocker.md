@@ -26,4 +26,30 @@ The first candidate was the Piglow.
 
 ![piglow](https://cdn.shopify.com/s/files/1/0174/1800/products/PiGlow-3_1024x1024.gif)
 
-This small PCB is plugged on the GPIO header and steered via one of the serial line available on this interface, called I2C. The Pimoroni supplied example python code shows how to control the individual LED. A good sample to start with was the CPU load visualizer. 
+This small PCB is plugged on the GPIO header and steered via one of the serial line available on this interface, called I2C. The Pimoroni supplied example python code shows how to control the individual LED. A good sample to start with was the CPU load visualizer (`cpu.py`). 
+
+I first made it work directly on my RPI2 with the Hypriot ditribution. It is important to load the relevent kernel modules (`i2c-dev` and `i2c-bcm2708` in the `/etc/modules`. Although not mentioned in the documentation, I had to enable them in the `/boot/config.txt` by adding the line `dtparam=i2c1=on`. These files look like this on my systems. 
+
+```
+# /etc/modules: kernel modules to load at boot time.
+#
+# This file contains the names of kernel modules that should be loaded
+# at boot time, one per line. Lines beginning with "#" are ignored.
+
+snd_bcm2835
+
+i2c-dev
+i2c-bcm2708
+```
+
+```
+hdmi_force_hotplug=1
+enable_uart=1
+
+# camera settings, see http://elinux.org/RPiconfig#Camera
+start_x=1
+disable_camera_led=1
+gpu_mem=128
+
+dtparam=i2c1=on
+```
