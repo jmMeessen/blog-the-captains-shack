@@ -30,6 +30,7 @@ This small PCB is plugged on the GPIO header and steered via one of the serial l
 
 I first made it work directly on my RPI2 with the Hypriot ditribution. It is important to load the relevent kernel modules (`i2c-dev` and `i2c-bcm2708` in the `/etc/modules`. Although not mentioned in the documentation, I had to enable them in the `/boot/config.txt` by adding the line `dtparam=i2c1=on`. These files look like this on my systems. 
 
+/etc/modules
 ```
 # /etc/modules: kernel modules to load at boot time.
 #
