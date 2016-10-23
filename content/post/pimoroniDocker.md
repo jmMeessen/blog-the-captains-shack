@@ -35,9 +35,7 @@ I first made it work directly on my RPI2 with the Hypriot ditribution. It is imp
 #
 # This file contains the names of kernel modules that should be loaded
 # at boot time, one per line. Lines beginning with "#" are ignored.
-
 snd_bcm2835
-
 i2c-dev
 i2c-bcm2708
 ```
@@ -45,16 +43,14 @@ i2c-bcm2708
 ```
 hdmi_force_hotplug=1
 enable_uart=1
-
 # camera settings, see http://elinux.org/RPiconfig#Camera
 start_x=1
 disable_camera_led=1
 gpu_mem=128
-
 dtparam=i2c1=on
 ```
 
-Once the hardware is accessible, I created a container image based on the [`alexellis2/python-gpio-arm:armv6`](https://github.com/alexellis/docker-arm/tree/master/images/armv6/python-gpio-arm) image by Docker Cap'tain Alex Ellis. I then load the necessary components for Python support of the Piglow. See hereafter the Docker file used. 
+Once the hardware is accessible, I created a container image based on the [`alexellis2/python-gpio-arm:armv6`](https://github.com/alexellis/docker-arm/tree/master/images/armv6/python-gpio-arm) image by Docker Cap'tain Alex Ellis. I then load the necessary components for Python support of the Piglow. See hereafter the [Docker file used](https://github.com/jmMeessen/rpi-docker-images/tree/master/rpi-piglow). 
 
 ```docker
 # Pimoroni's Piglow enabled image for Raspberry Pi
@@ -71,4 +67,16 @@ RUN apt-get -q update && \
     apt-get -qy clean all
 ```
 
-aaa
+Based on that image, I can derive a container image with the python code (located in the piglow directory).
+
+```docker
+# Container image that uses Pimoroni's Piglow to show the cpu load
+
+FROM thecaptainsshack/rpi-piglow
+
+WORKDIR /root/
+ADD ./piglow/ ./piglow/
+
+WORkDIR /root/piglow
+CMD ["python2", "./cpu.py"]
+```
