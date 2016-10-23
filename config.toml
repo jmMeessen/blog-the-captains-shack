@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "The Captain's Shack"
 theme = "casper"
 
+pygmentsstyle = "colorful"
 
 contentdir = "content"
 layoutdir = "layouts"
@@ -23,7 +24,7 @@ canonifyurls = true
   githubName = "jmMeessen"
   twitterName = "jm_meessen"
   hideHUGOSupport = false
-  pygmentsstyle = colorful
+  pygmentsstyle = "colorful"
   PygmentsCodeFences = true
   logo = "images/jmm_avatar.jpeg"
 
