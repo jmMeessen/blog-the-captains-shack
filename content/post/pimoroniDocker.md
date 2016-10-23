@@ -69,7 +69,7 @@ RUN apt-get -q update && \
 
 Based on that image, I can derive a container image with the python code (located in the piglow directory).
 
-{{< highlight Docker >}}
+{{< highlight Bash >}}
 # Container image that uses Pimoroni's Piglow to show the cpu load
 
 FROM thecaptainsshack/rpi-piglow
