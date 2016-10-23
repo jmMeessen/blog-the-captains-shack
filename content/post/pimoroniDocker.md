@@ -30,8 +30,7 @@ This small PCB is plugged on the GPIO header and steered via one of the serial l
 
 I first made it work directly on my RPI2 with the Hypriot ditribution. It is important to load the relevent kernel modules (`i2c-dev` and `i2c-bcm2708` in the `/etc/modules`. Although not mentioned in the documentation, I had to enable them in the `/boot/config.txt` by adding the line `dtparam=i2c1=on`. These files look like this on my systems. 
 
-/etc/modules
-```
+/etc/modules ```
 # /etc/modules: kernel modules to load at boot time.
 #
 # This file contains the names of kernel modules that should be loaded
@@ -55,4 +54,19 @@ gpu_mem=128
 dtparam=i2c1=on
 ```
 
-Once the hardware is accessible, I created a container image based on the [`alexellis2/python-gpio-arm:armv6`](https://github.com/alexellis/docker-arm/tree/master/images/armv6/python-gpio-arm) image by Docker Cap'tain Alex Ellis.
+Once the hardware is accessible, I created a container image based on the [`alexellis2/python-gpio-arm:armv6`](https://github.com/alexellis/docker-arm/tree/master/images/armv6/python-gpio-arm) image by Docker Cap'tain Alex Ellis. I then load the necessary components for Python support of the Piglow. See hereafter the Docker file used. 
+
+```docker
+# Pimoroni's Piglow enabled image for Raspberry Pi
+
+FROM alexellis2/python-gpio-arm:armv6
+
+MAINTAINER Jean-Marc MEESSEN <jean-marc@meessen-web.org>
+
+WORKDIR /root/
+RUN apt-get -q update && \
+    apt-get -qy install python-dev python-pip python-smbus python-psutil gcc make && \
+    apt-get -qy remove python-dev gcc make && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get -qy clean all
+```
