@@ -3,8 +3,6 @@ languageCode = "en-us"
 title = "The Captain's Shack"
 theme = "casper"
 
-  pygmentsstyle = colorful
-  PygmentsCodeFences = true
 
 contentdir = "content"
 layoutdir = "layouts"
