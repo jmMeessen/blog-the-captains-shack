@@ -52,7 +52,7 @@ dtparam=i2c1=on
 
 Once the hardware is accessible, I created a container image based on the [`alexellis2/python-gpio-arm:armv6`](https://github.com/alexellis/docker-arm/tree/master/images/armv6/python-gpio-arm) image by Docker Cap'tain Alex Ellis. I then load the necessary components for Python support of the Piglow. See hereafter the [Docker file used](https://github.com/jmMeessen/rpi-docker-images/tree/master/rpi-piglow). 
 
-```docker
+{{< highlight Docker >}}
 # Pimoroni's Piglow enabled image for Raspberry Pi
 
 FROM alexellis2/python-gpio-arm:armv6
@@ -65,7 +65,7 @@ RUN apt-get -q update && \
     apt-get -qy remove python-dev gcc make && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get -qy clean all
-```
+{{< /highlight >}}
 
 Based on that image, I can derive a container image with the python code (located in the piglow directory).
 
