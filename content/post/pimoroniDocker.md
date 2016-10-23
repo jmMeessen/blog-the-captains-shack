@@ -21,3 +21,5 @@ While prepairing a training lab with my flock of RPis, I wondered if I could dem
 ## The Piglow and the Display-O-Tron
 
 [Pimoroni](https://shop.pimoroni.com/) builds several devices that plug on the  Raspberry Pi GPIO. They are well designed, reasonably priced and often useful. The software support is good. Thus a good starting point for hassle free experiments.
+
+The first candidate was the Piglow. ![piglow](https://cdn.shopify.com/s/files/1/0174/1800/products/PiGlow-3_1024x1024.gif). Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum praesentium obcaecati, doloremque recusandae iste! Provident tenetur eaque, ratione aut, molestias, rem obcaecati porro, harum neque hic amet iure perspiciatis? Consequuntur.
