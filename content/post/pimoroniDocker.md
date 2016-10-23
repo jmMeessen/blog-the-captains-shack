@@ -54,3 +54,5 @@ gpu_mem=128
 
 dtparam=i2c1=on
 ```
+
+Once the hardware is accessible, I created a container image based on the [`alexellis2/python-gpio-arm:armv6`](https://github.com/alexellis/docker-arm/tree/master/images/armv6/python-gpio-arm) image by Docker Cap'tain Alex Ellis.
