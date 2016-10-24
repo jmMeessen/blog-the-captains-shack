@@ -40,7 +40,8 @@ i2c-dev
 i2c-bcm2708
 {{< /highlight >}}
 
-{{< highlight Bash >}}
+{{< highlight Text >}}
+# /boot/config.txt
 hdmi_force_hotplug=1
 enable_uart=1
 # camera settings, see http://elinux.org/RPiconfig#Camera
