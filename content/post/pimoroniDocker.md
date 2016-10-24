@@ -40,7 +40,7 @@ i2c-dev
 i2c-bcm2708
 ```
 
-```
+{{< highlight Bash >}}
 hdmi_force_hotplug=1
 enable_uart=1
 # camera settings, see http://elinux.org/RPiconfig#Camera
@@ -48,7 +48,7 @@ start_x=1
 disable_camera_led=1
 gpu_mem=128
 dtparam=i2c1=on
-```
+{{< /highlight >}}
 
 Once the hardware is accessible, I created a container image based on the [`alexellis2/python-gpio-arm:armv6`](https://github.com/alexellis/docker-arm/tree/master/images/armv6/python-gpio-arm) image by Docker Cap'tain Alex Ellis. I then load the necessary components for Python support of the Piglow. See hereafter the [Docker file used](https://github.com/jmMeessen/rpi-docker-images/tree/master/rpi-piglow). 
 
@@ -83,4 +83,12 @@ WORkDIR /root/piglow
 CMD ["python2", "./cpu.py"]
 {{< /highlight >}}
 
-Both images are available on Dockerhub.
+The [rpi-piglow](https://hub.docker.com/r/thecaptainsshack/rpi-piglow/) and [rpi-piglow-cpu](https://hub.docker.com/r/thecaptainsshack/rpi-piglow-cpu/) images are available on Dockerhub and there sources are on [this github repo](https://github.com/jmMeessen/rpi-docker-images).
+
+__But__, accessing local hardware ressources requires extented privileges. This is why Pimorony recommends running the example programs with Root privileges. Docker is likewhise cautious: containers are "unprivileged" by default. The easiest way to "solve" this is to run the container with the `--privileged` flag. But it boils down to give __all__ privileges to the container, which is a very bad security practice.
+
+Docker Run has several tools to fine tune the container privileges. The `--cap-add`/`--cap-drop` allow to fine tune kernel capabilities. AppArmor and SElinux allow also to fine tune the footprint of the container. In the case of the Piglow, the  `--device` directive commes very handy to give access to only the required ressource: the `/dev/i2c-1` device. To run our little container the following run command should be used:
+
+```
+docker run --device=/dev/i2c-1 -d thecaptainsshack/rpi-piglow-cpu"
+```
