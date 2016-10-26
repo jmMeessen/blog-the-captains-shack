@@ -144,7 +144,7 @@ RUN apt-get -q update && \
     apt-get -qy remove python-dev gcc make && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get -qy clean all
-{{< highlight Docker >}}
+{{< highlight >}}
 
 The [Docker image](https://github.com/jmMeessen/rpi-docker-images/tree/master/rpi-display-o-tron-cpu) that runs the python code is based on the previously built image:
 
