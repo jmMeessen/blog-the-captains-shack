@@ -91,7 +91,7 @@ __But__, accessing local hardware resources requires extented privileges. This i
 Docker Run has several tools to fine tune the container privileges. The `--cap-add`/`--cap-drop` allow to fine tune kernel capabilities. AppArmor and SElinux allow also to fine tune the footprint of the container. In the case of the Piglow, the  `--device` directive comes very handy to give access to only the required ressource: the `/dev/i2c-1` device. To run our little container the following run command should be used:
 
 ```
-docker run --device=/dev/i2c-1 -d thecaptainsshack/rpi-piglow-cpu"
+docker run --device=/dev/i2c-1 -d thecaptainsshack/rpi-piglow-cpu
 ```
 
 ### The Display-O-Tron Hat
@@ -144,7 +144,7 @@ RUN apt-get -q update && \
     apt-get -qy remove python-dev gcc make && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get -qy clean all
-{{< highlight >}}
+{{< /highlight >}}
 
 The [Docker image](https://github.com/jmMeessen/rpi-docker-images/tree/master/rpi-display-o-tron-cpu) that runs the python code is based on the previously built image:
 
@@ -158,7 +158,7 @@ ADD ./display-o-tron/ ./display-o-tron/
 
 WORkDIR /root/display-o-tron
 CMD ["python2", "./cpu.py"
-{{< highlight >}}
+{{< /highlight >}}
 
 To work the display requires an access to the I2C, the SPI bus but also to the full memory (to access the GPIO). I did not investigate what function requires what access and if it can be selected. It would probably require to adapt the supplied dot3k library. An interesting discussion on the subject can be seen in [this Github issue](https://github.com/docker/docker/issues/25885). For the time being, I had to resort to run the image as `--privileged`. Bummer.
 
