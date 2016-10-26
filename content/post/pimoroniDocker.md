@@ -40,7 +40,7 @@ i2c-dev
 i2c-bcm2708
 {{< /highlight >}}
 
-{{< highlight Text "hl_lines=7 8" >}}
+{{< highlight Text "hl_lines=8" >}}
 # /boot/config.txt
 hdmi_force_hotplug=1
 enable_uart=1
@@ -104,7 +104,7 @@ I used the same process as for the Piglow to design the Dockerfile.
 
 First the Display-O-Tron hardware must be enable on the host. This is done by adapting the `/etc/modules` and the `/boot/config.txt` files. The result looks like this:
 
-{{< highlight Text >}}
+{{< highlight Text "hl_lines=6 7 8" >}}
 # /etc/modules: kernel modules to load at boot time.
 #
 # This file contains the names of kernel modules that should be loaded
@@ -117,7 +117,7 @@ spi-bcm2708
 
 and this: 
 
-{{< highlight Text >}}
+{{< highlight Text "hl_lines=8 9 10" >}}
 # /boot/config.txt
 hdmi_force_hotplug=1
 enable_uart=1
