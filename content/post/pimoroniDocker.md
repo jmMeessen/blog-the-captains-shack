@@ -30,7 +30,7 @@ This small PCB is plugged on the GPIO header and steered via one of the serial l
 
 I first made it work directly on my RPI2 with the Hypriot distribution. It is important to load the relevant kernel modules (`i2c-dev` and `i2c-bcm2708` in the `/etc/modules`. Although not mentioned in the documentation, I had to enable them in the `/boot/config.txt` by adding the line `dtparam=i2c1=on`. These files look like this on my systems. 
 
-{{< highlight Text >}}
+{{< highlight Text "hl_lines=6 7" >}}
 # /etc/modules: kernel modules to load at boot time.
 #
 # This file contains the names of kernel modules that should be loaded
@@ -40,7 +40,7 @@ i2c-dev
 i2c-bcm2708
 {{< /highlight >}}
 
-{{< highlight Text >}}
+{{< highlight Text "hl_lines=7 8" >}}
 # /boot/config.txt
 hdmi_force_hotplug=1
 enable_uart=1
@@ -112,6 +112,7 @@ First the Display-O-Tron hardware must be enable on the host. This is done by ad
 snd_bcm2835
 i2c-dev
 i2c-bcm2708
+spi-bcm2708
 {{< /highlight >}}
 
 and this: 
@@ -125,6 +126,8 @@ start_x=1
 disable_camera_led=1
 gpu_mem=128
 dtparam=i2c1=on
+dtparam=spi=on
+dtparam=i2c_arm=on
 {{< /highlight >}}
 
 Don't forget to reboot the Pi so that these settings are taken into account.
