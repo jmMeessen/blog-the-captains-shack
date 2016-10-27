@@ -15,6 +15,9 @@ canonifyurls = true
   category = "categories"
   tag = "tags"
 
+[blackfriday]
+  hrefTargetBlank=true
+
 [params]
   description = "The perfect place for random experiments and explorations"
   author = "Jean-Marc MEESSEN"
