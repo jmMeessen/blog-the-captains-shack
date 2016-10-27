@@ -3,7 +3,7 @@ author = ""
 comments = true
 date = "2016-10-22T22:29:59+01:00"
 draft = false
-image = ""
+image = "images/PI-lab.jpg"
 menu = ""
 share = true
 slug = "rpi-piglow-container"
@@ -14,9 +14,9 @@ title = "Add some glitter to RPi Docker containers"
 
 With limited investment, the Raspberry Pi is a great platform to touch, learn and demonstrate many concepts of modern computing. Docker has very rapidely found its way on the RPi, mainly with the help of the [Hypriot](http://blog.hypriot.com/) distribution. I use a flock of RPi to demonstrate and help visualize many Docker concepts. 
 
-With its hardware interfacing capabilities, the Raspberry Pi is also a very popular IOT platform. Docker could have the same "mass innovation" enabling effect as for mainstream computing. "build, ship and run" opens indeed interesting perspectives in the field of IOT. 
+With its hardware interfacing capabilities, the Raspberry Pi is also a very popular IOT platform. For IOT, Docker could have the same "mass innovation" enabling effect as for mainstream computing. "build, ship and run" opens indeed interesting perspectives in the field of IOT. 
 
-While preparing a training lab with my flock of RPis, I wondered if I could demonstrate that aspect of Docker. These are some notes about my experiments.
+While preparing a training lab with my herd of RPis, I wondered if I could demonstrate that aspect of Docker. These are some notes about my experiments.
 
 [Pimoroni](https://shop.pimoroni.com/) builds several devices that plug on the  Raspberry Pi GPIO. They are well designed, reasonably priced and often useful. The software support is good. Thus a good starting point for hassle free experiments.
 
