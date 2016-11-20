@@ -17,6 +17,7 @@ canonifyurls = true
 
 [blackfriday]
   hrefTargetBlank=true
+  extensions = ["hardLineBreak"]
 
 [params]
   description = "The perfect place for random experiments and explorations"
