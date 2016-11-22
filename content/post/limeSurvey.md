@@ -1,8 +1,8 @@
 +++
 author = ""
 comments = true
-date = "2016-11-14T22:00:00+01:00"
-draft = true
+date = "2016-11-22T22:00:00+01:00"
+draft = false
 image = "images/logo-lime-survey.png"
 menu = ""
 share = true
@@ -36,16 +36,16 @@ docker run -d --name limesurvey -p 80:80 crramirez/limesurvey:latest
 
 This allowed me to explore the product and fine tune the configuration. Lime Survey is indeed a very complete product with invitation management, reply tracking, various exports and statistics.
 
-Once I understood the product and built a useful evaluation survey, it was time to push it to the Captain's Shack so that trainees could fill it while it was still meaningfull.
+Once I understood the product and built a useful evaluation survey, it was time to push it to the Captain's Shack so that trainees could fill it while it was still meaningful.
 
 This went also surprisingly fast. Just a few preparation steps and updating Ansible, and I had a working instance.
 
 1. add a new subdomain for survey requests
 2. add a reverse proxy drop-in configuration file to the Nginx server
-3. request a LetsEncrypt certificate for the new domain (utomated with Docker)
+3. request a LetsEncrypt certificate for the new domain (automated with Docker)
 4. update the master `docker-compose.yml` to include the Lime Survey container in the Shack's configuration. 
 
-Note that for the "real" configuration the _mySQL_ database is stored in a data volume. It is presistent between restart and works better then when embedded. Keeping the database in the infrastructure container is an anti-pattern.
+Note that for the "real" configuration the _mySQL_ database is stored in a data volume. It is persistent between restart and works better then when embedded. Keeping the database in the infrastructure container is an anti-pattern.
 
 {{< highlight bash >}}
 version: '2'
@@ -72,6 +72,6 @@ volumes:
 
 (see the github repository for details of the Captain's Shack Ansible setup scripts)
 
-The setup of Lime Survey reauires some manual configuration. I didn't have the time to automate this. But it is definitely something to be done. At least backup the configuration and the database content.
+The setup of Lime Survey requires some manual configuration. I didn't have the time to automate this. But it is definitely something to be done. At least backup the configuration and the database content.
 
 
