@@ -12,7 +12,9 @@ title = "Needed a survey. Easy peasy with Docker."
 
 +++
 
-## [TL;DR]
+***
+
+**[TL;DR]**
 
 Docker allowed me to quickly evaluate and run a complex setup. This article describes this experience.
 
