@@ -2,8 +2,8 @@
 author = ""
 comments = true
 date = "2017-01-02T22:00:00+01:00"
-draft = true
-image = "images/logo-lime-survey.png"
+draft = false
+image = "images/sailingShip.jpg"
 menu = ""
 share = true
 slug = "career"
@@ -11,6 +11,8 @@ tags = ["career"]
 title = "2017, the year of changes..."
 
 +++
+
+***
 
 I contributed for nearly 28 years to the evolution of the same company. I enjoyed it very much and have good memories. At 8 years of retirement, I could have continued to reap the earnings of this loyal career. But I realized that I was not too old to explore new ways of working or new technologies and have the joy to share my enthusiasm of these discoveries with others. And there are wise people that don't associate "old" with "obsolete".
 
