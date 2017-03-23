@@ -11,7 +11,7 @@ I like to share with others my enthousiam about what I discovered during my expl
 
 These are the conferences or talks I had the pleasure to make.  
 
-* "**Docker, c'est quoi st'affaire ?**", Les Jeudi du Libre (Mons), January 2017
+* "**Docker, c'est quoi st'affaire ?**", Les Jeudis du Libre (Mons), January 2017
 * "**Introduction to Docker for Java developers**", Brussels Java User Group (BruJUG), December 2016
 * "**Initiation à Docker**", Science Faculty (Luminy campus) Aix-Marseille University, one day training, November 2016
 * "**Docker introduction and security**", SWIFT Dev-Days 2016
