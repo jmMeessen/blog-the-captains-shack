@@ -14,7 +14,7 @@ A **shack** is a type of small, often primitive shelter or dwelling. It can also
 
 This "Internet Shack" is the perfect place for random experiments that bother nobody.
 
-The ongoing explorations relate to linux configuration with Ansible, Docker, Hugo static site generator and Gogs Git self hosting.
+The ongoing explorations relate to linux configuration with Ansible, Docker, Hugo static site generator, Gogs Git self hosting and Jenkins continuous integration.
 
 ![Jmm](/images/jmm_picture.jpeg)
 
