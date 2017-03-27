@@ -26,7 +26,6 @@ canonifyurls = true
   authorwebsite = "https://the-captains-shack.com"
   cover = "images/cabin2.jpg"
   githubName = "jmMeessen"
-  mailName = "info@the-captains-shack.com"
   twitterName = "jm_meessen"
   hideHUGOSupport = false
   pygmentsstyle = "colorful"
