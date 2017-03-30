@@ -12,6 +12,14 @@ title = "Spring refactoring of the Captain's shack"
 
 +++
 
+***
+
+**[TL;DR]**
+
+The usefull concept of Ansible roles must be reflected in the maintenance of the site's master Docker-compose. This article describes the scripts refactoring to achieve this goal.
+
+***
+
 
 The best way to prevent damage due to tampering on an Internet facing server is to rebuild it regularly. The most efficient way is the scripted way. From day one the "Captain's Shack" server has been configured with Ansible so that the server can be regularly re-initialized. 
 Each component, defined in an Ansible role, is deployed as a Docker container. To orchestrate these containers, I use a central "docker-compose" file.
