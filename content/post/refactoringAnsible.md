@@ -16,7 +16,7 @@ title = "Spring refactoring of the Captain's shack"
 
 **[TL;DR]**
 
-The usefull concept of Ansible roles must be reflected in the maintenance of the site's master Docker-compose. This article describes the scripts refactoring to achieve this goal.
+Ansible roles is a very useful concept to turn features on or off. But it must also done with the site's master Docker-compose. This article describes the script's refactoring to achieve this goal.
 
 ***
 
