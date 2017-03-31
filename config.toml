@@ -31,6 +31,7 @@ canonifyurls = true
   pygmentsstyle = "colorful"
   PygmentsCodeFences = true
   logo = "images/jmm_avatar.jpeg"
+  disqusShortname = "Jmm"
 
 [[menu.main]]
   name = "My Blog"

@@ -16,7 +16,7 @@ title = "Spring refactoring of the Captain's shack"
 
 **[TL;DR]**
 
-Ansible roles is a very useful concept to turn features on or off. But it must also done with the site's master Docker-compose. This article describes the script's refactoring to achieve this goal.
+Ansible roles are powerful to turn features on or off. But it must also done with the site's master Docker-compose. This article describes the script's refactoring to achieve this goal.
 
 ***
 
