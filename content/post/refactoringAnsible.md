@@ -3,7 +3,7 @@ author = ""
 comments = true
 date = "2017-03-27"
 draft = true
-image = "images/refactoring.gif"
+image = "images/refactoringAnsible/refactoring.gif"
 menu = ""
 share = true
 slug = "refactoringTheShack"
@@ -21,10 +21,10 @@ Ansible roles are powerful to turn features on or off. But it must also done wit
 ***
 
 
-The best way to prevent tampering damage on an Internet facing server is to rebuild it regularly. And the only way to do it is the scripted way. From day one, the "Captain's Shack" server has been configured with Ansible so that the server can be regularly re-initialized. 
+The best way to prevent tampering on an Internet facing server is to rebuild it regularly. And the only way to do it is the scripted way. From day one, the "Captain's Shack" server has been configured with Ansible so that the server can be regularly re-initialized. 
 Each component, defined in an Ansible role, is deployed as a Docker container. To orchestrate these containers, I use a central "docker-compose" file.
 
-![kimsufi](/images/Kimsufi.png)
+![kimsufi](/images/refactoringAnsible/Kimsufi.png)
 
 Initialy, the docker configuration (and the docker-compose) was managed via a single docker-compose file. This design did not allow to disable a service (like Nexus or Lime Survey) by just commenting out the Ansible role. It required adapting several Ansible scripts or configuration file. Very impractible.  
 
@@ -36,7 +36,11 @@ I initialy tried to achieve this scripted Docker-compose update with the blockin
 
 So I chose to go for the proverbial plan B.
 
-The idea is to have several docker-compose.yml that will first be "superposed" before being processed by the docker-compose engine. Each compose file define what is needed to activate a single service. It describes the service and volume part but also the required additional configuraion to the "web" service (reverse proxy).
+The idea is to have several docker-compose.yml that will first be "superposed" before being processed by the docker-compose engine. 
+
+![kimsufi](/images/refactoringAnsible/layers2.png)
+
+Each compose file define what is needed to activate a single service. It describes the service and volume part but also the required additional configuraion to the "web" service (reverse proxy).
 
 {{< highlight yaml >}}
 version: '2'
