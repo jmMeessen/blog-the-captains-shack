@@ -38,7 +38,7 @@ So I chose to go for the proverbial plan B.
 
 The idea is to have several docker-compose.yml that will first be "superposed" before being processed by the docker-compose engine. Each compose file define what is needed to activate a single service. It describes the service and volume part but also the required additional configuraion to the "web" service (reverse proxy).
 
-{{< highlight bash >}}
+{{< highlight yaml >}}
 version: '2'
 
 services:
