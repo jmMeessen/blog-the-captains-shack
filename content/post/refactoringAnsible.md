@@ -16,7 +16,7 @@ title = "Spring refactoring of the Captain's shack"
 
 **[TL;DR]**
 
-Ansible roles are powerful to turn features on or off. But it must also done with the site's master Docker-compose. This article describes the script's refactoring to achieve this goal.
+*Ansible roles are powerful to turn features on or off. But it must also done with the site's master Docker-compose. This article describes the script's refactoring to achieve this goal.*
 
 ***
 
@@ -28,9 +28,9 @@ Each component, defined in an Ansible role, is deployed as a Docker container. T
 
 Initialy, the docker configuration (and the docker-compose) was managed via a single docker-compose file. This design did not allow to disable a service (like Nexus or Lime Survey) by just commenting out the Ansible role. It required adapting several Ansible scripts or configuration file. Very impractible.  
 
-The real-life case of disabling the "Lime Survey" service made the need of some refactoring obvious.
+When I wanted to turn off the "Lime Survey" service it made refactoring need obvious.
 
-The main issue was that enabling/disabling a service required to change the docker-compose file. And this in different sections of the file.  Obviously the service's section needed to be updated but also the volume section and, more annoying, the "web" service (Nginx) one. 
+The main issue with enabling/disabling a service is the required change to the docker-compose file. And this in different sections of the file.  Obviously the service needs to be updated but also the volume section and, more annoying, the "web" service (Nginx) one. 
 
 I initialy tried to achieve this scripted Docker-compose update with the blockinfile Ansible module. It turned out to be clumsy. The module doesn't lend itself easily to properly handle yaml block insertions: the block is inserted at column 0. The workaround is to start the block with a dummy line that would set the correct offset of the rest of the block (as this line is inserted at column 0). That dummy line needed to be removed in the following step. Also annoying was the fact that the module inserted each time a "noisy" comment before and after the inserted block. This made the generated docker-compose file difficult to read for a human reader. Repeadly manipulating individual line in the "web" service part was also very annoying and inefficient.
 
@@ -64,5 +64,24 @@ volumes:
 
 These compose files can be assembled either with the `-f` switch of the docker-compose command line or by setting the COMPOSE_FILE environement variable with list of these files seperated by a ":". I chose the second strategy because it was easier to setup correctly with Ansible.
 
-* Various compose files
-* batch files to start, restart, rebuild
+So each role was modified to have each its own docker-compose file fragment. It is stored in the `data/docker` where most of the docker stuff is stored.
+
+A script file (`setComposeList.sh`) is added so that the required environment variable is correctly set up. Each role add the name of its compose file to the variable definition.
+
+{{< highlight bash >}}
+export COMPOSE_FILE=nginx-compose.yml:gogs-compose.yml:hugo-compose.yml:jenkins-compose.yml:nexus-compose.yml
+{{< /highlight >}}
+
+To package everything correctly, a set of scripts are also installed. I have a `start_web.sh`, a `stop_web.sh`, a `restart_web.sh` and a `build_and_start_web.sh` script. The latest is shown here after.
+
+{{< highlight bash >}}
+#!/usr/bin/env bash
+
+cd /home/data/docker
+. ./setComposeList.sh
+docker-compose up --build -d
+docker-compose ps
+{{< /highlight >}}
+
+The ansible scripts discussed here are available on this [Github repo](https://github.com/jmMeessen/the-captains-shack).
+
