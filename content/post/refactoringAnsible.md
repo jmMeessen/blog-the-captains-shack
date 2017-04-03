@@ -1,7 +1,7 @@
 +++
 author = ""
 comments = true
-date = "2017-04-2"
+date = "2017-04-02T00:01:00+01:00"
 draft = false
 image = "images/refactoringAnsible/refactoring.gif"
 menu = ""
