@@ -1,6 +1,6 @@
 +++
 date = "2017-08-02T17:46:17+02:00"
-draft = true
+draft = false
 title = "Maven and Docker, some thoughts..."
 author = ""
 comments = true
