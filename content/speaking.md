@@ -11,6 +11,8 @@ I like to share with others my enthousiam about what I discovered during my expl
 
 These are the conferences or talks I had the pleasure to make.  
 
+* "**Jenkins, la nouvelle génération**", (Lab) NightClazz Lille, December 2017
+* "**Jenkins, la nouvelle génération**", [DevDays 2017 (Mons)](https://t.co/u145jPzuHO), November 2017 
 * "**Livraison Continue & BlueOcean : écrivons ensemble des Pipelines Jenkins Déclaratifs pour votre application**", (Lab), Devfest Lille, Juin 2017
 * "**Docker, c'est quoi st'affaire ?**", Les Jeudis du Libre (Mons), January 2017
 * "**Introduction to Docker for Java developers**", Brussels Java User Group (BruJUG), December 2016
